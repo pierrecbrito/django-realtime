@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 
 def index(request):
     if request.method == "GET":
@@ -7,6 +7,12 @@ def index(request):
         nome = request.POST['nome']
 
         if nome: 
-            ...
+            request.session['nome'] = nome
+            return redirect('chats')
         else:
             return render(request, "identidade.html", {"mensagem": "Campo nome vazio ou inválido."})
+
+def chats(request):
+    if request.method == "GET":
+        return render(request, "chats.html")
+ 
