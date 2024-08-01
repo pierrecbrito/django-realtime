@@ -13,3 +13,24 @@ html, body {
     width: 100%;
     min-height: 100vh;
 }
+
+.campo, .campo:active {
+    width: 100%;
+    padding: 8px 7px;
+    border: none;
+    outline: none;
+    background-color: #DCDCDC;
+}
+
+.botao, .botao:active {
+    background-color: #8B17FA;
+    padding: 10px 5px;
+    width: 100%;
+    cursor: pointer;
+    color: #FFFFFF;
+    border: none;
+}
+
+.campo, .botao {
+    margin-top: 1.2em;
+}

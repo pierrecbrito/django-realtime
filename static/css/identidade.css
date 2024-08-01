@@ -6,8 +6,8 @@
 
 #formulario-identidade {
     background-color: #1F1F1F; 
-    max-width: 430px;
+    max-width: 350px;
     width: 100%;
-    min-height: 250px;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    padding: 1.2em;
 }
