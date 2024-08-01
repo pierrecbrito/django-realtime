@@ -34,3 +34,10 @@ html, body {
 .campo, .botao {
     margin-top: 1.2em;
 }
+
+.mensagem {
+    margin-top: 1.2em;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 0.9em;
+}
