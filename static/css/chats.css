@@ -1,0 +1,13 @@
+#container-principal {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container {
+    background-color: #1F1F1F; 
+    max-width: 600px;
+    width: 100%;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    padding: 1.2em;
+}

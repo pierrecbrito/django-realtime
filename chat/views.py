@@ -1,4 +1,5 @@
 from django.shortcuts import render, redirect
+from .models import Grupo
 
 def index(request):
     if request.method == "GET":
@@ -17,5 +18,10 @@ def index(request):
 
 def chats(request):
     if request.method == "GET":
-        return render(request, "chats.html")
+        if 'nome' in request.session:
+            grupos = Grupo.objects.all()
+            return render(request, "chats.html", {"grupos":grupos})
+        else:
+            return redirect('index')
+
  
