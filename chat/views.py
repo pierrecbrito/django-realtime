@@ -23,5 +23,9 @@ def chats(request):
             return render(request, "chats.html", {"grupos":grupos})
         else:
             return redirect('index')
+        
+def chat(request, grupo):
+    grupo = Grupo.objects.get(id=grupo)
+    return render(request, "chat.html", {"nome_grupo": grupo.nome})
 
  

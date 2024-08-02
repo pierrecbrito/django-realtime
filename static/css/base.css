@@ -37,6 +37,7 @@ a:hover {
     border: none;
     outline: none;
     background-color: #DCDCDC;
+    color: #000000;
 }
 
 .botao, .botao:active {

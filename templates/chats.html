@@ -11,7 +11,7 @@
 
         <ul>
         {% for grupo in grupos %}
-            <li><a>{{ grupo.nome }}</a></li>
+            <li><a href="{% url 'chat' grupo.id %}">{{ grupo.nome }}</a></li>
         {% endfor %}
         <ul>
     </div>
