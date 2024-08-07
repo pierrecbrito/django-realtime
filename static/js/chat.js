@@ -10,7 +10,7 @@ const chatSocket = new WebSocket(
 
 chatSocket.onmessage = function(e) {
     const data = JSON.parse(e.data);
-    $("#caixa-mensagens").append(`<p>${data.message}</p>`)
+    $("#caixa-mensagens").append(`<p>${data.mensagem}</p>`)
 };
 
 chatSocket.onclose = function(e) {
@@ -21,7 +21,7 @@ $("#caixa-mensagem").on( "keyup", function(e) {
     if(e.key==="Enter") {
         let mensagem = $("#input-mensagem").val()
         chatSocket.send(JSON.stringify({
-            'message': mensagem
+            'mensagem': mensagem
         }));
         $("#input-mensagem").val('')
     }

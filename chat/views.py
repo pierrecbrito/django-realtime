@@ -25,8 +25,11 @@ def chats(request):
             return redirect('index')
         
 def chat(request, grupo):
-    grupo = Grupo.objects.get(id=grupo)
-    return render(request, "chat.html", {"nome_grupo": grupo.nome})
+    if 'nome' in request.session:
+        grupo = Grupo.objects.get(id=grupo)
+        return render(request, "chat.html", {"nome_grupo": grupo.nome})
+    return render(request, "identidade.html")
+
 
 def logout(request):
     del request.session['nome']
