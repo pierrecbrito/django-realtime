@@ -19,11 +19,11 @@ chatSocket.onclose = function(e) {
 
 $("#caixa-mensagem").on( "keyup", function(e) {
     if(e.key==="Enter") {
-        let mensagem = $("#input-mensagem").value()
+        let mensagem = $("#input-mensagem").val()
         chatSocket.send(JSON.stringify({
             'message': mensagem
         }));
-        $("#input-mensagem").value("")
+        $("#input-mensagem").val('')
     }
    
 });
