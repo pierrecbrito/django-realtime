@@ -18,7 +18,7 @@
 #caixa-mensagens {
     min-height: 60vh;
     max-height: 60vh;
-    overflow: scroll;
+    overflow-y: scroll;
 }
 
 #caixa-mensagem {
