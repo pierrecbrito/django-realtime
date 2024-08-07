@@ -30,7 +30,6 @@ def chat(request, grupo):
         return render(request, "chat.html", {"nome_grupo": grupo.nome})
     return render(request, "identidade.html")
 
-
 def logout(request):
     del request.session['nome']
     return redirect('index')

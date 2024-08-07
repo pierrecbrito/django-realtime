@@ -8,6 +8,7 @@
 {% block content %}
     <div class="container">
         <h2 id="titulo-chat">{{nome_grupo}}</h2>
+        <p id="nome-usuario">{{request.session.nome}}</p>
 
         <div id="caixa-mensagens">
         </div>
