@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from .models import Grupo
+from .models import Grupo, Mensagem
 
 def index(request):
     if request.method == "GET":
@@ -27,7 +27,8 @@ def chats(request):
 def chat(request, grupo):
     if 'nome' in request.session:
         grupo = Grupo.objects.get(id=grupo)
-        return render(request, "chat.html", {"nome_grupo": grupo.nome})
+        mensagens = Mensagem.objects.filter(grupo = grupo)
+        return render(request, "chat.html", {"nome_grupo": grupo.nome, "mensagens": mensagens})
     return render(request, "identidade.html")
 
 def logout(request):

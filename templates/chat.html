@@ -11,6 +11,9 @@
         <p id="nome-usuario">{{request.session.nome}}</p>
 
         <div id="caixa-mensagens">
+            {% for mensagem in mensagens %}
+                <p><b>{{mensagem.nome_autor}} - </b>{{mensagem.conteudo}}</p>
+            {% endfor %}
         </div>
 
         <div id="caixa-mensagem">

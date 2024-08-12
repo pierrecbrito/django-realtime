@@ -29,7 +29,6 @@ class ChatConsumer(AsyncWebsocketConsumer):
         mensagem = text_data_json['mensagem']
         remetente = text_data_json['remetente']
 
-
         await self.save_mensagem(remetente=remetente, mensagem=mensagem, grupo=self.grupo)
 
         await self.channel_layer.group_send(
