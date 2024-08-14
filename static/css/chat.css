@@ -19,6 +19,8 @@
     min-height: 60vh;
     max-height: 60vh;
     overflow-y: scroll;
+    scrollbar-color: #8B17FA transparent;
+    scrollbar-width: thin;
 }
 
 #caixa-mensagem {

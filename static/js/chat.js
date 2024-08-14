@@ -12,6 +12,7 @@ const chatSocket = new WebSocket(
 chatSocket.onmessage = function(e) {
     const data = JSON.parse(e.data);
     $("#caixa-mensagens").append(`<p><b>${data.remetente} - </b>${data.mensagem}</p>`)
+    rolarParaBaixo()
 };
 
 chatSocket.onclose = function(e) {
@@ -36,5 +37,15 @@ $("#caixa-mensagem").on( "keyup", function(e) {
     }
    
 });
+
+
+const rolarParaBaixo = () => {
+    $('#caixa-mensagens').scrollTop($('#caixa-mensagens')[0].scrollHeight);
+}
+
+rolarParaBaixo()
+
+
+
 
 
