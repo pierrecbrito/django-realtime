@@ -12,5 +12,6 @@
 
 - `Identificação`: o usuário pode pôr o nome em um formulário. O nome ficará salvo na sessão e será identificadp em cada mensagem.
 
-
-<video src="overview.mp4" width="400" />
+<video width="100%" height="400" controls>
+  <source src="overview.mp4" type="video/mp4">
+</video>
