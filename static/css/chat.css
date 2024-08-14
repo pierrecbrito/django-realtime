@@ -41,3 +41,17 @@
 #nome-usuario {
     display: none;
 }
+
+#momento {
+    font-size: 0.7rem;
+    display: block;
+}
+
+.mensagem {
+    text-align: left;
+    cursor: pointer;
+}
+
+.mensagem:hover, .mensagem:hover * {
+    color: #8B17FA;
+}

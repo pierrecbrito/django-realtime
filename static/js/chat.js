@@ -11,7 +11,8 @@ const chatSocket = new WebSocket(
 
 chatSocket.onmessage = function(e) {
     const data = JSON.parse(e.data);
-    $("#caixa-mensagens").append(`<p><b>${data.remetente} - </b>${data.mensagem}</p>`)
+    console.log(data)
+    $("#caixa-mensagens").append(`<p class="mensagem"><b>${data.remetente} - </b>${data.mensagem} <span id="momento">${data.momento}</span></p> `)
     rolarParaBaixo()
 };
 

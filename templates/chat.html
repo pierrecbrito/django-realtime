@@ -12,7 +12,10 @@
 
         <div id="caixa-mensagens">
             {% for mensagem in mensagens %}
-                <p><b>{{mensagem.nome_autor}} - </b>{{mensagem.conteudo}}</p>
+                <p class="mensagem">
+                    <b>{{mensagem.nome_autor}} - </b>{{mensagem.conteudo}}
+                    <span id="momento">{{ mensagem.momento|date:'d/m/Y H:i' }}h</span>
+                </p>
             {% endfor %}
         </div>
 

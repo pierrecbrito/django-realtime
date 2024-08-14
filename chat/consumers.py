@@ -3,6 +3,7 @@ import json
 from channels.generic.websocket import AsyncWebsocketConsumer
 from channels.db import database_sync_to_async
 from .models import Mensagem, Grupo
+from datetime import timedelta
 
 #Nós temos muitas instâncias do ChatConsumer
 class ChatConsumer(AsyncWebsocketConsumer):
@@ -29,24 +30,28 @@ class ChatConsumer(AsyncWebsocketConsumer):
         mensagem = text_data_json['mensagem']
         remetente = text_data_json['remetente']
 
-        await self.save_mensagem(remetente=remetente, mensagem=mensagem, grupo=self.grupo)
+        nova_mensagem = await self.save_mensagem(remetente=remetente, mensagem=mensagem, grupo=self.grupo)
 
+        nova_mensagem.momento = nova_mensagem.momento - timedelta(hours=3, minutes=0)
         await self.channel_layer.group_send(
             self.sala_grupo,
             {
                 'type': 'chat_mensagem',
                 'mensagem': mensagem,
-                'remetente': remetente
+                'remetente': remetente,
+                'momento': nova_mensagem.momento.strftime("%d/%m/%Y %H:%M") + "h"
             }
         )
 
     async def chat_mensagem(self, event):
         mensagem = event['mensagem']
         remetente = event['remetente']
+        momento = event['momento']
 
         await self.send(text_data=json.dumps({
             'mensagem': mensagem,
-            'remetente': remetente
+            'remetente': remetente,
+            'momento': momento
         }))
 
     @database_sync_to_async
@@ -57,3 +62,4 @@ class ChatConsumer(AsyncWebsocketConsumer):
     def save_mensagem(self, remetente, mensagem, grupo):
         nova_mensagem = Mensagem(nome_autor=remetente, conteudo=mensagem, grupo=grupo)
         nova_mensagem.save()
+        return nova_mensagem

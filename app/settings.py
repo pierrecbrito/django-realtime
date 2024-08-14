@@ -131,3 +131,7 @@ CHANNEL_LAYERS = {
         'BACKEND': 'channels.layers.InMemoryChannelLayer'
     },
 }
+
+DATE_FORMAT = '%d-%m-%y H:i'
+TIME_ZONE = 'America/Sao_Paulo'
+USE_TZ = True
