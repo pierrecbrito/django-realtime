@@ -10,4 +10,4 @@
     de recarregar a página para carregar novas mensagens.
 </p>
 
-- `Identificação`: o usuário pode pôr o nome em um formulário. O nome ficará salvo na sessão.
+- `Identificação`: o usuário pode pôr o nome em um formulário. O nome ficará salvo na sessão e será identificadp em cada mensagem.
