@@ -15,6 +15,13 @@ chatSocket.onmessage = function(e) {
 };
 
 chatSocket.onclose = function(e) {
+    Toastify({
+        text: "Comunicação perdida com o servidor.", 
+        duration: 6000,
+        style: {
+            background: "#8B17FA",
+        }
+    }).showToast();
     console.error('Chat socket closed unexpectedly');
 };
 
