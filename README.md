@@ -13,5 +13,5 @@
 - `Identificação`: o usuário pode pôr o nome em um formulário. O nome ficará salvo na sessão e será identificadp em cada mensagem.
 
 <video width="100%" height="400" controls>
-  <source src="overview.mp4" type="video/mp4">
+  <source src="https://github.com/pierrecbrito/django-realtime/blob/main/overview.mp4" type="video/mp4">
 </video>
