@@ -9,7 +9,7 @@
     <form id="formulario-identidade" method="POST" action="{% url 'index' %}">
         {% csrf_token %}
         {% if mensagem %}
-            <div class="mensagem">{{ mensagem }}</div>
+            <div class="mensagem-login">{{ mensagem }}</div>
         {% endif %}
         <input type="text" placeholder="Digite seu nome aqui..." class="campo" name="nome">
         <button class="botao">Entrar</button>

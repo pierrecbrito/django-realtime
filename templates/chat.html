@@ -12,10 +12,17 @@
 
         <div id="caixa-mensagens">
             {% for mensagem in mensagens %}
-                <p class="mensagem">
-                    <b>{{mensagem.nome_autor}} - </b>{{mensagem.conteudo}}
-                    <span id="momento">{{ mensagem.momento|date:'d/m/Y H:i' }}h</span>
-                </p>
+                {% if request.session.nome == mensagem.nome_autor %}
+                    <p class="mensagem-remetente">
+                        {{mensagem.conteudo}}<b> - Você </b> 
+                        <span id="momento">{{ mensagem.momento|date:'d/m/Y H:i' }}h</span>
+                    </p> 
+                {% else %}
+                    <p class="mensagem">
+                        <b>{{mensagem.nome_autor}} - </b>{{mensagem.conteudo}}
+                        <span id="momento">{{ mensagem.momento|date:'d/m/Y H:i' }}h</span>
+                    </p>
+                {% endif %}
             {% endfor %}
         </div>
 

@@ -11,7 +11,7 @@
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     padding: 1.2em;
     height: 100%;
-    max-height: 80vh;
+    max-height: 85vh;
     position: relative;
 }
 
@@ -52,7 +52,19 @@
     cursor: pointer;
 }
 
-.mensagem:hover, .mensagem:hover * {
+.mensagem-remetente {
+    text-align: right;
+    cursor: pointer;
+    margin-right: 15px;
+}
+
+.mensagem-remetente #momento {
+    font-size: 0.7rem;
+    display: block;
+    text-align: right;
+}
+
+.mensagem:hover, .mensagem-remetente:hover, .mensagem:hover *, .mensagem-remetente:hover * {
     color: #8B17FA;
 }
 

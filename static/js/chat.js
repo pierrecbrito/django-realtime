@@ -11,8 +11,12 @@ const chatSocket = new WebSocket(
 
 chatSocket.onmessage = function(e) {
     const data = JSON.parse(e.data);
-    console.log(data)
-    $("#caixa-mensagens").append(`<p class="mensagem"><b>${data.remetente} - </b>${data.mensagem} <span id="momento">${data.momento}</span></p> `)
+    if(data.remetente == nome) {
+        $("#caixa-mensagens").append(`<p class="mensagem-remetente">${data.mensagem}<b> - Você </b> <span id="momento">${data.momento}</span></p> `)
+    } else {
+        $("#caixa-mensagens").append(`<p class="mensagem"><b>${data.remetente} - </b>${data.mensagem} <span id="momento">${data.momento}</span></p> `)
+    }
+  
     rolarParaBaixo()
 };
 
